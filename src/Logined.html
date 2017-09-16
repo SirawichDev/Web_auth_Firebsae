@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GG</title>
+    SUCCESS!!
+</head>
+<body>
+<script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyAhLChjoc3JnEDgDM_4xBfj6ZazFnEz2EQ",
+        authDomain: "sm-fgu.firebaseapp.com",
+        databaseURL: "https://sm-fgu.firebaseio.com",
+        projectId: "sm-fgu",
+        storageBucket: "sm-fgu.appspot.com",
+        messagingSenderId: "473569814539"
+    };
+    firebase.initializeApp(config);
+</script>
+
+<script type="text/javascript">
+
+        firebase.auth().onAuthStateChanged(function(user) {
+            if (user) {
+                document.body.innerHTML = '<h1> Congrat!!' + user.displayName + ',you are done
+            } else {
+                console.log("No user signed");
+            }
+        });
+</script>
+</body>
+
+<!-- The surrounding HTML is left untouched by FirebaseUI.
+     Your app may use that space for branding, controls and other customizations.-->
+<h1>Welcome to My Awesome App</h1>
+<div id="firebaseui-auth-container"></div>
+
+</html>
